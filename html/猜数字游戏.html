@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//1生成1~100之间的随机数
+	var num1 = Math.round(Math.random()*100);
+	alert(num1);
+	//2使用propmt  让用户输入数字，并比较
+	    //大了==>  提示用户大了，并充分执行第2步
+	    //小了==> 提示用户小了，并重复执行第2步
+	    //猜对了==> 提示用户猜对了，询问是否继续游戏。
+	    	//是 ==>重复执行1,2步
+	    	//不继续==> window.close();
+	guess();
+	function guess() {
+	var num2 = prompt("请输入1~100之间的数组！","0");
+	if (isNaN(+num2)) {
+		//输入无效数字，提示，并重复执行2步
+		alert(请输入无效数字);
+		
+	}
+		if (num2 > num1) {
+			alert("大了");
+			guess();
+		}else if (num2 < num1) {
+			alert("小了");
+			guess();
+		}else{
+			//猜对了==>提示用户猜对了，询问是否游戏
+			var result = confirm ("恭喜您答对了！ 是否要继续游戏？");
+			if (result) {
+				//是==> 重复执行1,2步
+				num1 = randomNumber();
+				guess();
+			}else {
+				window.close();
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	
+</body>
+</html>
