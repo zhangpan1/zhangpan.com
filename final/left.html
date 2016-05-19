@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		function addTR(){
+			//1 获得表单中 的  用户名  年龄 性别
+			var username = document.form1.username.value;
+			var age = document.form1.age.value;
+			var sex = document.form1.sex.value;
+			//2 组装tr对象
+			var tr = document.createElement("tr");
+			tr.innerHTML="<td>"+username+"</td><td>"+age+"</td><td>"+sex+"</td><td><a  href='javascript:void(0)' onclick='del(this)'>删除</a></td>"
+			//3 获得右侧页面的table对象
+			//4 添加
+			window.parent.frames[2].document.getElementById("tab1").appendChild(tr);
+		}
+</script>
+</head>
+<body>
+
+<form action="#" name="form1">
+<table>
+<tr>
+<td>姓名</td>
+<td><input type="text" id="username" name="username" /></td>
+</tr>
+<tr>
+<td>年龄</td>
+<td><input type="text" id="age" name="age"  /></td>
+</tr>
+<tr>
+<td>性别</td>
+<td>
+<input type="text" id="sex" name="sex" readonly /><input type="button" value="请选择" onclick="window.open('select.html','','width=200,height=100')">
+</td>
+</tr>
+<tr align="center" >
+<td rowspan="2" ><input type="button" value="添加" id="add" onclick="addTR()"  /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

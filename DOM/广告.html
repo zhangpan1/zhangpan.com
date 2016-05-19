@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css" >
+	div{
+		border: 1px solid red;
+	}
+	#one{
+		width:300px;
+		height:300px;
+	}
+	#two{
+		width:50px;
+		height:50px;
+		background-color: pink;
+	}
+</style>
+</head>
+<body>
+<div id="one">
+	<a href="DataSort.html" >这是凤姐的视频</a><br/>
+	<a href="form表单验证.html">这是体育老师的视频</a>
+</div>
+	<div id="two">
+		<a href="Table.html" target="_blank" onclick="fun1(this);"  >这是流氓广告</a>
+	</div>
+</body>
+<script type="text/javascript">
+	document.getElementById("one").onmousemove=function (event){
+		//1.获得鼠标的位置(clientX/Y)
+		var x = event.clientX;
+		var y = event.clientY;
+		//2.设置id=two的div的位置为鼠标的位置.
+		var two = document.getElementById("two");
+			//1>设置id=two的div的position属性为absolute
+			two.style.position="absolute";
+			//2>设置id=two的div的top和left属性为鼠标的对应坐标
+			two.style.top=(y-25)+"px";
+			two.style.left=(x-25)+"px";
+	}
+	function fun1(a){
+		//1.获得a标签的父标签
+		//2.设置div的display属性为none
+		a.parentNode.style.display="none";
+	}
+</script>
+</html>

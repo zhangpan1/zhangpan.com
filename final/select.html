@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<select id="sex"  name="sex">
+<option selected >-请选择-</option>
+<option>男</option>
+<option>女</option>
+</select> 
+</body>
+<script type="text/javascript" >
+	document.getElementById("sex").onchange=function (){
+		//1 获得用户选择的option的内容
+		//2.获得要操作的input type=text ==> 获得document ==> 获得window
+		//3.将值赋值到 input type=text
+		window.opener.document.form1.sex.value = this.options[this.selectedIndex].innerHTML;
+		//4.当前页面关闭 close
+		close();
+	}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var str = "itcast传智播客";
+var len =1;
+function deng(){
+		
+		if(len==str.length+1){
+			len=1;
+			}
+		window.status=str.substring(0, len++);
+		
+}
+window.onload = function(){
+	
+	window.setInterval("deng()", 100);
+};
+
+</script>
+</head>
+<frameset rows="20%,*"  >
+<frame src="top.html" />
+<frameset cols="50%,*">
+<frame src="left.html" />
+<frame src="main.html" name="main" scrolling="Auto"  />
+</frameset>
+</frameset>
+</html>
